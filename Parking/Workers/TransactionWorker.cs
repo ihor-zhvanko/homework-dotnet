@@ -6,23 +6,23 @@ using ParkingSimulator.Entities;
 
 namespace ParkingSimulator.Workers
 {
-    public class TransactionWorker : BaseWorker, IWorker, IDisposable
+  public class TransactionWorker : BaseWorker, IWorker, IDisposable
+  {
+    private Parking _parking;
+    private string _fileName;
+
+    public TransactionWorker()
     {
-        private Parking _parking;
-        private string _fileName;
-
-        public TransactionWorker()
-        {
-            Timeout = Settings.DumpTimeout;
-            _parking = Parking.Instance;
-            _fileName = Settings.TransactionFilename;
-        }
-
-        protected override void Main()
-        {	
-            var transactions = _parking.LastMinuteTransactions
-                .Select(x => $"[{x.Timestamp}] |{x.Id}| From car with id = {x.CarId} was debited {x.Debited}");
-            File.WriteAllLines(_fileName, transactions);
-        }
+      Timeout = Settings.DumpTimeout;
+      _parking = Parking.Instance;
+      _fileName = Settings.TransactionFilename;
     }
+
+    protected override void Main()
+    {
+      var transactions = _parking.LastMinuteTransactions
+          .Select(x => $"[{x.Timestamp}] |{x.Id}| From car with id = {x.CarId} was debited {x.Debited}");
+      File.WriteAllLines(_fileName, transactions);
+    }
+  }
 }

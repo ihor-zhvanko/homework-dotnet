@@ -4,11 +4,11 @@ using System.Text;
 
 namespace ParkingSimulator.Exceptions
 {
-    public class ParkingExceededMaxSpaceException : Exception
+  public class ParkingExceededMaxSpaceException : Exception
+  {
+    public ParkingExceededMaxSpaceException() :
+        base("Exceeded max space of parking")
     {
-        public ParkingExceededMaxSpaceException() :
-            base("Exceeded max space of parking")
-        {
-        }
     }
+  }
 }

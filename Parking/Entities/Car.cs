@@ -4,18 +4,18 @@ using System.Text;
 
 namespace ParkingSimulator.Entities
 {
-    public enum CarType
-    {
-        Passenger,
-        Truck,
-        Bus,
-        Motorcycle
-    }
+  public enum CarType
+  {
+    Passenger,
+    Truck,
+    Bus,
+    Motorcycle
+  }
 
-    public class Car
-    {
-        public int Id { get; set; }
-        public double Balance { get; set; }
-        public CarType Type { get; set; }
-    }
+  public class Car
+  {
+    public int Id { get; set; }
+    public double Balance { get; set; }
+    public CarType Type { get; set; }
+  }
 }

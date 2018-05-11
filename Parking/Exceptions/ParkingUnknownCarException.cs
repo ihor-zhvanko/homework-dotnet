@@ -4,12 +4,12 @@ using System.Text;
 
 namespace ParkingSimulator.Exceptions
 {
-    public class ParkingUnknownCarException : Exception
+  public class ParkingUnknownCarException : Exception
+  {
+    public ParkingUnknownCarException(int carId) :
+        base($"Unknow car with such id: {carId}")
     {
-        public ParkingUnknownCarException(int carId) :
-            base($"Unknow car with such id: {carId}")
-        {
 
-        }
     }
+  }
 }

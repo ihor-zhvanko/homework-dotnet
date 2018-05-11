@@ -7,19 +7,19 @@ using ParkingSimulator.Common;
 
 namespace ParkingSimulator.Workers
 {
-    public sealed class ParkingWorker : BaseWorker, IWorker, IDisposable
-    {
-        private Parking _parking;
+  public sealed class ParkingWorker : BaseWorker, IWorker, IDisposable
+  {
+    private Parking _parking;
 
-        public ParkingWorker()
-        {
-            Timeout = Settings.Timeout;
-            _parking = Parking.Instance;
-        }
-        
-        protected override void Main()
-        {
-			_parking.DebitParkingCost();
-        }
+    public ParkingWorker()
+    {
+      Timeout = Settings.Timeout;
+      _parking = Parking.Instance;
     }
+
+    protected override void Main()
+    {
+      _parking.DebitParkingCost();
+    }
+  }
 }

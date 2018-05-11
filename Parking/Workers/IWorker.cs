@@ -4,9 +4,9 @@ using System.Text;
 
 namespace ParkingSimulator.Workers
 {
-    public interface IWorker : IDisposable
-    {
-        void Start();
-        void Stop();
-    }
+  public interface IWorker : IDisposable
+  {
+    void Start();
+    void Stop();
+  }
 }
