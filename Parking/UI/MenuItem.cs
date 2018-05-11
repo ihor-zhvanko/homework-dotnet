@@ -1,5 +1,7 @@
 ﻿using System;
-namespace Parking
+using System.Text;
+
+namespace ParkingSimulator.UI
 {
     public class MenuItem
     {
@@ -28,5 +30,10 @@ namespace Parking
 		{
 			Console.WriteLine($"[ {Command} ] {Caption}");
 		}
-	}
+
+        public void Render(StringBuilder builder)
+        {
+            builder.AppendLine($"[ {Command} ] {Caption}");
+        }
+    }
 }

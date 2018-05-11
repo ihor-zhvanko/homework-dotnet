@@ -1,7 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using ParkingSimulator.UI;
 
-namespace Parking
+namespace ParkingSimulator
 {
 	internal class Router
     {
@@ -45,6 +46,7 @@ namespace Parking
                 throw new ArgumentException($"Can't find {route}");
             }
 
+            Routes[route].OnShow();
             Current = Routes[route];
         }
     }
